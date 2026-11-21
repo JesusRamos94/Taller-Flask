@@ -23,14 +23,5 @@ taller_flask/
     └── img/
 ```
 
-## Cómo ejecutarlo (macOS)
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python run.py
-```
-
 Abrir http://127.0.0.1:5000
 # Taller-Flask
