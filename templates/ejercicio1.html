@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block titulo %}Ejercicio 1{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Formulario de Notas</h1>
+
+    <form action="/ejercicio1" method="POST">
+        <label>Nota 1:</label>
+        <input type="text" name="nota1" required>
+
+        <label>Nota 2:</label>
+        <input type="text" name="nota2" required>
+
+        <label>Nota 3:</label>
+        <input type="text" name="nota3" required>
+
+        <label>Asistencia (%):</label>
+        <input type="text" name="asistencia" required>
+
+        <button type="submit" class="boton-enviar">Enviar</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if promedio is not none %}
+        <p class="resultado">{{ promedio }}</p>
+        <p class="resultado">{{ estado }}</p>
+    {% endif %}
+
+    <a class="volver" href="{{ url_for('index') }}">Volver al menú</a>
+</div>
+{% endblock %}

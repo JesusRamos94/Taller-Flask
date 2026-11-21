@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block titulo %}Ejercicio 2{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta centrado">
+    <form action="/ejercicio2" method="POST">
+        <label>Nombre 1:</label>
+        <input type="text" name="nombre1" required>
+
+        <label>Nombre 2:</label>
+        <input type="text" name="nombre2" required>
+
+        <label>Nombre 3:</label>
+        <input type="text" name="nombre3" required>
+
+        <button type="submit" class="boton-enviar">Enviar</button>
+    </form>
+
+    {% if nombre %}
+        <p class="resultado">El nombre con mayor cantidad de caracteres es : {{ nombre }}</p>
+        <p class="resultado">El nombre tiene : {{ cantidad }} caracteres</p>
+    {% endif %}
+
+    <a class="volver" href="{{ url_for('index') }}">Volver al menú</a>
+</div>
+{% endblock %}
